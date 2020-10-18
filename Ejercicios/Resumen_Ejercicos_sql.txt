@@ -1,0 +1,32 @@
+use usairlineflights2;
+
+Ejercicio 1
+
+select count(*) from flights;
+
+Ejercicio 2
+
+select flights.origin as 'Origin',avg(flights.ArrDelay) as 'prom_arribades',avg(flights.DepDelay) as 'prom_sortides' from flights group by flights.origin;
+
+Ejercicio 3
+
+select origin, colYear,colMonth,avg(ArrDelay) as 'prom_arribades' from flights group by origin,colYear,colMonth order by origin,colYear,colMonth;
+
+Ejercicio 4
+
+select usairports.City, flights.colYear,flights.colMonth,avg(flights.ArrDelay) as 'prom_arribades' from flights inner join usairports on (flights.origin=usairports.IATA) group by City,colYear,colMonth order by City,colYear,colMonth;
+
+Ejercicio 5
+
+select uniqueCarrier,colYear,colMonth,sum(cancelled) as total_cancelled from flights group by UniqueCarrier,colYear,colMonth order by sum(cancelled) desc,UniqueCarrier,colYear,colMonth;
+
+Ejercicio 6
+
+select TailNum, sum(Distance) as 'totalDistance' from flights group by TailNum having length(TailNum)<>0  order by sum(Distance) Desc limit 10;
+
+Ejercicio 7
+
+select uniqueCarrier, avg(arrdelay) as 'avgDelay' from flights group by uniqueCarrier having avg(ArrDelay) > 10 order by avg(ArrDelay)desc;
+
+
+

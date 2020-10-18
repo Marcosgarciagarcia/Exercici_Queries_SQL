@@ -1,0 +1,1 @@
+select flights.origin as 'Origin',avg(flights.ArrDelay) as 'prom_arribades',avg(flights.DepDelay) as 'prom_sortides' from flights group by flights.origin;

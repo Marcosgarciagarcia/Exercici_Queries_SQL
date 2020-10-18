@@ -1,0 +1,1 @@
+select usairports.City, flights.colYear,flights.colMonth,avg(flights.ArrDelay) as 'prom_arribades' from flights inner join usairports on (flights.origin=usairports.IATA) group by City,colYear,colMonth order by City,colYear,colMonth;

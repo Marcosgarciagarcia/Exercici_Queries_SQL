@@ -1,0 +1,1 @@
+select uniqueCarrier, avg(arrdelay) as 'avgDelay' from flights group by uniqueCarrier having avg(ArrDelay) > 10 order by avg(ArrDelay)desc;

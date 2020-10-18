@@ -1,0 +1,1 @@
+select uniqueCarrier,colYear,colMonth,sum(cancelled) as total_cancelled from flights group by UniqueCarrier,colYear,colMonth order by sum(cancelled) desc,UniqueCarrier,colYear,colMonth;
